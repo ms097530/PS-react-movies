@@ -2,22 +2,16 @@ import { useRef } from "react"
 
 export default function Form(props)
 {
-    // const { text, setText } = props
     const { movieSearch } = props
 
     const searchRef = useRef(null)
-
-    // const handleKeyDown = (e) =>
-    // {
-    //     console.log(e)
-    //     setText(prevText => prevText + e.key)
-    // }
 
     const handleSubmit = (e) =>
     {
         e.preventDefault()
         console.log(`submitting search for ${searchRef.current.value}...`)
         movieSearch(searchRef.current.value)
+        searchRef.current.value = ''
     }
 
     return (
@@ -26,9 +20,7 @@ export default function Form(props)
                 <input
                     ref={searchRef}
                     type="text"
-                    placeholder="Movie title goes here"
-                    /* onKeyDown={handleKeyDown} 
-                    value={text} */ />
+                    placeholder="Movie title goes here" />
                 <input type="submit" value="Submit" />
             </form>
         </div>

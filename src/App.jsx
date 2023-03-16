@@ -5,17 +5,14 @@ import MovieDisplay from './components/MovieDisplay';
 
 function App()
 {
-  // const [searchText, setSearchText] = useState('')
-
   const getMovie = (searchTerm) =>
   {
-    console.log('fetching data...')
+    console.log(`fetching data about ${searchTerm}...`)
   }
 
   return (
     <div className="App">
-      <Form /* text={searchText} setText={setSearchText} */
-        movieSearch={getMovie} />
+      <Form movieSearch={getMovie} />
       <MovieDisplay />
     </div>
   );
