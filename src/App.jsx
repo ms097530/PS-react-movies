@@ -4,6 +4,7 @@ import './App.css';
 import Form from './components/Form';
 import MovieDisplay from './components/MovieDisplay';
 import NavBar from './components/NavBar';
+import { Container } from 'react-bootstrap';
 
 function App()
 {
@@ -30,9 +31,11 @@ function App()
   return (
     <div className="App">
       <NavBar />
-      <Form
-        movieSearch={updateMovie} />
-      <MovieDisplay movie={movie} />
+      <Container className='mt-5'>
+        <Form
+          movieSearch={updateMovie} />
+        <MovieDisplay movie={movie} />
+      </Container>
     </div>
   );
 }

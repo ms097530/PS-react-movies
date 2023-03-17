@@ -1,4 +1,5 @@
 import { useState, useRef } from "react"
+import { Form as BForm, FormControl, Button } from "react-bootstrap"
 
 
 
@@ -7,15 +8,13 @@ export default function Form(props)
     const { movieSearch } = props
 
     const DEFAULT_FORM_STATE = {
-        searchTerm: '',
-        username: ''
+        searchTerm: ''
     }
 
     // useful to store form data as an object so that we don't need state for each input/piece of data being tracked
     const [formData, setFormData] = useState(DEFAULT_FORM_STATE)
 
     const searchRef = useRef(null)
-    const usernameRef = useRef(null)
 
     const handleChange = (e) =>
     {
@@ -38,24 +37,18 @@ export default function Form(props)
     }
 
     return (
-        <div>
-            <form action="" onSubmit={handleSubmit}>
-                <input
+        <div className="Form py-3">
+            <BForm className="d-flex mb-3" onSubmit={handleSubmit}>
+                <FormControl
                     ref={searchRef}
                     type="text"
                     placeholder="Movie title goes here"
                     value={formData.searchTerm}
                     name="searchTerm"
                     onChange={handleChange} />
-                <input
-                    ref={usernameRef}
-                    type="text"
-                    placeholder="Username goes here"
-                    value={formData.username}
-                    name="username"
-                    onChange={handleChange} />
-                <input type="submit" value="Submit" />
-            </form>
+
+                <Button variant="danger" type="submit">Search</Button>
+            </BForm>
         </div>
     )
 }

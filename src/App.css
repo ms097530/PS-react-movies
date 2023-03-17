@@ -1,6 +1,7 @@
 .App
 {
   text-align: center;
+  background-color: moccasin;
 }
 
 .App-logo
@@ -20,7 +21,7 @@
 .App-header
 {
   background-color: #282c34;
-  min-height: 100vh;
+  /* min-height: 100vh; */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -45,6 +46,11 @@
   {
     transform: rotate(360deg);
   }
+}
+
+.Form
+{
+  max-width: 100%;
 }
 
 .MovieDisplay
