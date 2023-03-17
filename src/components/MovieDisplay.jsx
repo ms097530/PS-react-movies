@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react"
+import React from "react"
 
 export default function MovieDisplay(props)
 {
@@ -34,11 +35,11 @@ export default function MovieDisplay(props)
                             <p>Duration: {movie.runtime}</p>
 
                             {
-                                movie.ratings.map(rating => (
-                                    <>
+                                movie.ratings.map((rating, i) => (
+                                    <React.Fragment key={i}>
                                         <h3>Rated by: {rating.Source}</h3>
                                         <p>Score: {rating.Value}</p>
-                                    </>
+                                    </React.Fragment>
                                 ))
                             }
                         </>
