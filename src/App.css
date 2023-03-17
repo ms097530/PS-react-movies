@@ -69,6 +69,11 @@
   background-color: rgba(20, 20, 20);
 }
 
+.MovieDisplay__img-container img
+{
+  max-width: 100%;
+}
+
 .MovieDisplay__more
 {
   cursor: pointer;
