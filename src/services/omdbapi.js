@@ -5,11 +5,8 @@ export const getMovie = async (searchTerm) =>
 {
     try
     {
-        // console.log(`fetching data about ${searchTerm}...`)
         const response = await fetch(`${BASE_URL}t=${searchTerm}`)
-        // console.log(response)
         let resBody = await response.json()
-        // console.log(resBody)
 
         // standardize key values so the first letters are not capitalized
         // TODO: make recursive
@@ -20,9 +17,7 @@ export const getMovie = async (searchTerm) =>
             let newKey = firstLetterLower + key.slice(1)
             movieData[newKey] = value
         }
-        // if match is found, save movie data, else set to null
-        // setMovie(movieData.response === 'True' ? movieData : null)
-        // console.log('movieData:', movieData)
+
         return movieData
     }
     catch (e)
