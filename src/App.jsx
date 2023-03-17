@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './App.css';
 import Form from './components/Form';
 import MovieDisplay from './components/MovieDisplay';
@@ -31,12 +31,17 @@ function App()
     setMovie(movieData.response === 'True' ? movieData : null)
   }
 
+  // initialize with movie
+  useEffect(() =>
+  {
+    setTimeout(() => getMovie('Clueless'), 5000)
+
+  }, [])
+
   return (
     <div className="App">
       <Form movieSearch={getMovie} />
-      {
-        movie && <MovieDisplay movie={movie} />
-      }
+      <MovieDisplay movie={movie} />
     </div>
   );
 }
