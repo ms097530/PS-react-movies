@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import React from "react"
 
+
 export default function MovieDisplay(props)
 {
     const { movie } = props
@@ -49,5 +50,5 @@ export default function MovieDisplay(props)
         )
     }
 
-    return movie ? loaded() : <h2>Loading...</h2>
+    return movie?.response === "True" ? loaded() : movie?.response === "False" ? <h2>There was a problem...</h2> : <h2>Loading...</h2>
 }
